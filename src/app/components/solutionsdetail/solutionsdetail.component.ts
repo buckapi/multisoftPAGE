@@ -18,7 +18,7 @@ export class SolutionsdetailComponent implements OnInit {
     public router: Router
   ) {
     this.loadCategories();
-    this.getAll();
+    this.getAllclient();
     console.log("seted: "+JSON.stringify(this.yeoman.preview.name));
    }
    
@@ -29,7 +29,7 @@ export class SolutionsdetailComponent implements OnInit {
        this.clients = response;}
      )
    }
-   getAll(){
+   getAllclient(){
  
     this.dataApiService.getAllClient().subscribe(response=> {
       this.yeoman.allclient=response;

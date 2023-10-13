@@ -11,6 +11,7 @@ import { DataApiService } from '@app/services/data-api.service';
 export class SolutionsComponent implements OnInit {
   categories:any;
   clients:any;
+  products:any;
   constructor(
     public router: Router,
     public yeoman:Yeoman,

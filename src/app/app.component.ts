@@ -28,7 +28,7 @@ export class AppComponent {
       'counterup',
       'waypoints',
       'scrollUp',
-      'imagesL',
+      'imagesloaded',
       'magnificPopup2',
       'easypiechart',
       'tilt',

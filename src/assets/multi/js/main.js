@@ -580,7 +580,7 @@
   });
 
   // isotop
-  $(".grid").imagesLoaded(function () {
+  $(".grid").imagesloaded(function () {
     // init Isotope
     var $grid = $(".grid").isotope({
       itemSelector: ".grid-item",
