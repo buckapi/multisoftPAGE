@@ -11,7 +11,7 @@ export class SolutionsdetailComponent implements OnInit {
   categories:any;
   clients:any;
   products:any=[];
-  product:any=[];
+  product:any={};
   
   constructor(
     public yeoman: Yeoman,

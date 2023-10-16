@@ -12,14 +12,13 @@ export class SolutionsComponent implements OnInit {
   categories:any;
   clients:any;
   products:any=[];
-  product:any=[];
+  product:any={};
   constructor(
     public router: Router,
     public yeoman:Yeoman,
     public dataApiService: DataApiService
   ) { 
     this.loadCategories();
-    // this.getAll();
     this.getAllProducts();
   }
   getAllProducts(){

@@ -62,9 +62,6 @@ export class ClientComponent implements OnInit {
   for (let i = 0; i < this.categories.length; i++) {
     if (this.categories[i].idCategory === id) {
       this.yeoman.categorySelected = this.categories[i].idCategory;
-      // console.log("id Category: "+this.yeoman.categorySelected);
-      // this.yeoman.virtualRoute = "shop";
-      // this.showCategoryDropdown = false;
       break; // Terminamos el bucle ya que hemos encontrado el objeto
     }
   }
