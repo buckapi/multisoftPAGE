@@ -109,6 +109,7 @@ export class HomeComponent implements AfterViewInit {
     this.loadCategories();
     this.getAllProducts();
     this.getAlltest();
+    this.getAllRubro();
      }
      
     
@@ -173,6 +174,14 @@ export class HomeComponent implements AfterViewInit {
     view(id:any){
       this.yeoman.preview=this.yeoman.products[id];
       this.setRoute('solutions');
+    }
+    getAllRubro(){
+    
+      this.dataApiService.getAllRubro().subscribe(response=>{
+        this.yeoman.allrubro=response;
+      
+        
+      });
     }
 
     

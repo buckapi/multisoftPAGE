@@ -7,12 +7,21 @@ import { DataApiService } from '@app/services/data-api.service';
   styleUrls: ['./industries.component.css']
 })
 export class IndustriesComponent implements OnInit {
-
+  
   constructor(
     public yeoman: Yeoman,
     public dataApiService: DataApiService
-  ) { }
-
+  ) {
+    this.getAllRubro();
+   }
+  getAllRubro(){
+    
+    this.dataApiService.getAllRubro().subscribe(response=>{
+      this.yeoman.allrubro=response;
+    
+      
+    });
+  }
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
