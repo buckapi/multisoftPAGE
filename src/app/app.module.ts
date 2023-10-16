@@ -7,6 +7,9 @@ import { HeaderComponent } from './ui/header/header.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { DataApiService } from './services/data-api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Yeoman } from './services/yeoman.service';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,11 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     BrowserModule,
     AppRoutingModule,
     NgxUsefulSwiperModule,
+    HttpClientModule,
     TooltipModule.forRoot(),
     
   ],
-  providers: [],
+  providers: [DataApiService, Yeoman],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

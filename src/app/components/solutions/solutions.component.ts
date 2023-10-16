@@ -11,7 +11,8 @@ import { DataApiService } from '@app/services/data-api.service';
 export class SolutionsComponent implements OnInit {
   categories:any;
   clients:any;
-  products:any;
+  products:any=[];
+  product:any=[];
   constructor(
     public router: Router,
     public yeoman:Yeoman,
@@ -30,20 +31,7 @@ export class SolutionsComponent implements OnInit {
     });
   }
   
-  setClient(i:any){
-    let indice= i;
-    this.dataApiService.getAllClient().subscribe(
-     response => {
-       this.clients = response;}
-     )
-   }
-  //  getAll(){
  
-  //   this.dataApiService.getAllClient().subscribe(response=> {
-  //     this.yeoman.allclient=response;
-   
-  //   });
-  // }
   setCategory(i:any){
     let indice= i;
     this.dataApiService.getAllCategory().subscribe(
@@ -64,9 +52,7 @@ export class SolutionsComponent implements OnInit {
      );
    }
    setPreview(i:any){
-    /* this.yeoman.preview=this.yeoman.all[i]; */
     this.yeoman.preview=this.yeoman.allProducts[i];
-    // console.log("seted: "+this.yeoman.preview.name);
     this.router.navigate(['solutionsdetail']);
   }
 

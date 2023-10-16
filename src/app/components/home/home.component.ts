@@ -4,7 +4,7 @@ import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
-import { Route } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -99,7 +99,7 @@ export class HomeComponent implements AfterViewInit {
         'counterup',
         'waypoints',
         'scrollUp',
-        'imagesloaded',
+        'images',
         'magnific-popup',
         'easypiechart',
         'tilt',
@@ -162,7 +162,7 @@ export class HomeComponent implements AfterViewInit {
     }
     
     setPreview(i:any){
-      this.yeoman.preview=this.yeoman.all[i];
+      this.yeoman.preview=this.yeoman.allProducts[i];
       this.router.navigate(['solutionsdetail']);
     }
 

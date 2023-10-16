@@ -17,7 +17,8 @@ export class Yeoman {
   virtualRoute:any="dashboard";
   pop:Boolean=false;
   data:any={};
-  products:any=[];
+  products:any={};
+  product:any=[];
   categories:any=[];
   category:any={};
   allcategory:any=[];
@@ -25,6 +26,8 @@ export class Yeoman {
   allclient:any=[];
   testimony:any=[];
   alltestimony:any=[];
+  rubro:any=[];
+  allrubro:any=[];
   currency:number=1;
   config: {
     clientSelected:number;

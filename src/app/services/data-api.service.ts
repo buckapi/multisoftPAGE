@@ -144,6 +144,10 @@ export class DataApiService {
 		const url_api = 	this.yeoman.origin.restUrl+'/api/testimonials';
 		return this.http.get(url_api);
 	}
+	getAllRubro(){
+		const url_api = 	this.yeoman.origin.restUrl+'/api/rubros';
+		return this.http.get(url_api);
+	}
 	getAllCars(){
 		const url_api = 	this.yeoman.origin.restUrl+'/api/cars';
 		return this.http.get(url_api);
@@ -208,6 +212,13 @@ export class DataApiService {
 	testimonyUpdate(part :ClientInterface, id: string){
 		// let token = this.authService.getToken();
 		const url_api=	this.yeoman.origin.restUrl+`/api/testimonials/${id}`;
+		return this.http
+		.put<ClientInterface>(url_api, part)
+		.pipe(map(data => data));
+	}
+	rubroUpdate(part :ClientInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=	this.yeoman.origin.restUrl+`/api/rubros/${id}`;
 		return this.http
 		.put<ClientInterface>(url_api, part)
 		.pipe(map(data => data));
@@ -290,6 +301,12 @@ export class DataApiService {
 	}
 	saveTestimony(client :ClientInterface){
 		const url_api=	this.yeoman.origin.restUrl+'/api/testimonials';
+		return this.http
+		.post<ClientInterface>(url_api, client)
+		.pipe(map(data => data));
+	}
+	saveRubro(client :ClientInterface){
+		const url_api=	this.yeoman.origin.restUrl+'/api/rubros';
 		return this.http
 		.post<ClientInterface>(url_api, client)
 		.pipe(map(data => data));
