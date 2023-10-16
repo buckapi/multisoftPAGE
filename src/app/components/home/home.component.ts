@@ -4,7 +4,7 @@ import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
-import { Route } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -109,6 +109,7 @@ export class HomeComponent implements AfterViewInit {
     this.loadCategories();
     this.getAllProducts();
     this.getAlltest();
+    this.getAllRubro();
      }
      
     
@@ -162,7 +163,7 @@ export class HomeComponent implements AfterViewInit {
     }
     
     setPreview(i:any){
-      this.yeoman.preview=this.yeoman.all[i];
+      this.yeoman.preview=this.yeoman.allProducts[i];
       this.router.navigate(['solutionsdetail']);
     }
 
@@ -173,6 +174,14 @@ export class HomeComponent implements AfterViewInit {
     view(id:any){
       this.yeoman.preview=this.yeoman.products[id];
       this.setRoute('solutions');
+    }
+    getAllRubro(){
+    
+      this.dataApiService.getAllRubro().subscribe(response=>{
+        this.yeoman.allrubro=response;
+      
+        
+      });
     }
 
     

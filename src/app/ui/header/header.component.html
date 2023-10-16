@@ -17,15 +17,13 @@
                                 <li><a class="active" [routerLink]="['./solutions']">Soluciones <i class="far fa-chevron-down"></i></a>
                                     <ul class="submenu">
                                         <li><a [routerLink]="['./solutions']">Soluciones</a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
+                                      
                                     </ul>
                                 </li>
-                                <li><a class="active" [routerLink]="['./']">Industrias <i class="far fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
+                                <li><a>Industrias <i class="far fa-chevron-down" ></i></a>
+                                    <ul class="submenu" >
+                                        <li><a *ngFor="let category of categories; let i = index " (click)="setPreview(i)" style="cursor: pointer;">{{category.name}}</a></li>
+                                       
                                     </ul>
                                 </li>
                                
