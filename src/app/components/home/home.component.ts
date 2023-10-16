@@ -99,7 +99,7 @@ export class HomeComponent implements AfterViewInit {
         'counterup',
         'waypoints',
         'scrollUp',
-        'imagesloaded',
+        'images',
         'magnific-popup',
         'easypiechart',
         'tilt',
