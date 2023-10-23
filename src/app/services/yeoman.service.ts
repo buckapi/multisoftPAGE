@@ -18,13 +18,11 @@ export class Yeoman {
   virtualRoute:any="dashboard";
   pop:Boolean=false;
   data:any={};
-
-  products:any={};
-  product:any=[];
+  product:any={};
   categories:any=[];
   category:any={};
   allcategory:any=[];
-  clients:any=[];
+  client:any={};
   allclient:any=[];
   testimony:any=[];
   alltestimony:any=[];

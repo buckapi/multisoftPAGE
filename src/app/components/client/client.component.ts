@@ -36,13 +36,13 @@ export class ClientComponent implements OnInit {
    
     });
   }
-  // setCategory(i:any){
-  //   let indice= i;
-  //   this.dataApiService.getAllCategory().subscribe(
-  //    response => {
-  //      this.categories = response;}
-  //    )
-  //  }
+  /*  setCategory(i:any){
+     let indice= i;
+     this.dataApiService.getAllCategory().subscribe(
+      response => {
+        this.categories = response;}
+      )
+    } */
  
    loadCategories(){
      this.dataApiService.getAllCategory().subscribe(

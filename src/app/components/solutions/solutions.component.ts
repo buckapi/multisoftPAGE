@@ -18,45 +18,20 @@ export class SolutionsComponent implements OnInit {
     public yeoman:Yeoman,
     public dataApiService: DataApiService
   ) { 
-    this.loadCategories();
     this.getAllProducts();
   }
   getAllProducts(){
     
     this.dataApiService.getAllProducts().subscribe(response=>{
       this.yeoman.allProducts=response;
-    
-      
     });
   }
-  
- 
-  setCategory(i:any){
-    let indice= i;
-    this.dataApiService.getAllCategory().subscribe(
-     response => {
-       this.categories = response;}
-     )
-   }
- 
-   loadCategories(){
-     this.dataApiService.getAllCategory().subscribe(
-       response => {
-         this.categories = response;
-         console.log("Categorías cargadas:", this.categories);
-       },
-       error => {
-         console.error("Error al cargar las categorías:", error);
-       }
-     );
-   }
    setPreview(i:any){
     this.yeoman.preview=this.yeoman.allProducts[i];
     this.router.navigate(['solutionsdetail']);
   }
-
-
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }

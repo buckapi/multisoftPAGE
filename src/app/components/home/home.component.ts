@@ -99,7 +99,7 @@ export class HomeComponent implements AfterViewInit {
         'counterup',
         'waypoints',
         'scrollUp',
-        'images',
+        'imageslo',
         'magnific-popup',
         'easypiechart',
         'tilt',
@@ -172,7 +172,7 @@ export class HomeComponent implements AfterViewInit {
       this.yeoman.virtualRoute=parametro;
     }
     view(id:any){
-      this.yeoman.preview=this.yeoman.products[id];
+      this.yeoman.preview=this.yeoman.product[id];
       this.setRoute('solutions');
     }
     getAllRubro(){

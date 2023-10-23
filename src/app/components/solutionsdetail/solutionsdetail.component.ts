@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class SolutionsdetailComponent implements OnInit {
   categories:any;
-  clients:any;
   products:any=[];
   product:any={};
   
@@ -18,25 +17,12 @@ export class SolutionsdetailComponent implements OnInit {
     public dataApiService: DataApiService,
     public router: Router
   ) {
+    this.product=this.product
     this.loadCategories();
-    this.getAllclient();
     console.log("seted: "+JSON.stringify(this.yeoman.preview.name));
    }
    
-   setClient(i:any){
-    let indice= i;
-    this.dataApiService.getAllClient().subscribe(
-     response => {
-       this.clients = response;}
-     )
-   }
-   getAllclient(){
- 
-    this.dataApiService.getAllClient().subscribe(response=> {
-      this.yeoman.allclient=response;
-   
-    });
-  }
+  
   setCategory(i:any){
     let indice= i;
     this.dataApiService.getAllCategory().subscribe(
@@ -58,6 +44,7 @@ export class SolutionsdetailComponent implements OnInit {
    }
   
   ngOnInit(): void {
+    
     window.scrollTo(0, 0);
   }
 }
