@@ -57,12 +57,14 @@ export class ClientComponent implements OnInit {
    }
 
   setCategory(category: any) {
-  let id = category.idCategory;
+     console.log("category : "+JSON.stringify(category));
+category=JSON.stringify(category.id);
+    let id = category
   this.yeoman.filtered=true;
   console.log("category recibida: "+id)
   for (let i = 0; i < this.categories.length; i++) {
     if (this.categories[i].idCategory === id) {
-      this.yeoman.categorySelected = this.categories[i].idCategory;
+      this.yeoman.categorySelected = this.categories[i];
       break; // Terminamos el bucle ya que hemos encontrado el objeto
     }
   }
