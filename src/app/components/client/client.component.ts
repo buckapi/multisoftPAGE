@@ -22,13 +22,13 @@ export class ClientComponent implements OnInit {
     this.getAll();
     this.loadCategories();
    }
-   setClient(i:any){
-    let indice= i;
-    this.dataApiService.getAllClient().subscribe(
-     response => {
-       this.clients = response;}
-     )
-   }
+   // setClient(i:any){
+   //  let indice= i;
+   //  this.dataApiService.getAllClient().subscribe(
+   //   response => {
+   //     this.clients = response;}
+   //   )
+   // }
    getAll(){
  
     this.dataApiService.getAllClient().subscribe(response=> {
@@ -58,6 +58,7 @@ export class ClientComponent implements OnInit {
 
   setCategory(category: any) {
   let id = category.idCategory;
+  this.yeoman.filtered=true;
   console.log("category recibida: "+id)
   for (let i = 0; i < this.categories.length; i++) {
     if (this.categories[i].idCategory === id) {

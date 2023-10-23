@@ -36,10 +36,10 @@ export class HeaderComponent implements OnInit {
          }
        );
      }
-     setPreview(i:any){
-      this.yeoman.preview=this.yeoman.allrubro[i];
-      this.router.navigate(['industries']);
-    }
+    //  setPreview(i:any){
+    //   this.yeoman.preview=this.yeoman.allrubro[i];
+    //   this.router.navigate(['industries']);
+    // }
     
   ngOnInit(): void {
   }
