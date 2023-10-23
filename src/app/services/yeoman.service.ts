@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 
 export class Yeoman {
-  categorySelected:string="first";
+  categorySelected:any={"id":""};
+  
+filtered=false;
   view:string='grid';
   preview:any={};
   user:any;
@@ -18,17 +20,17 @@ export class Yeoman {
   virtualRoute:any="dashboard";
   pop:Boolean=false;
   data:any={};
-
   products:any={};
-  product:any=[];
+  product:any={};
   categories:any=[];
   category:any={};
   allcategory:any=[];
-  clients:any=[];
+  clients:any={};
+  client:any={};
   allclient:any=[];
   testimony:any=[];
   alltestimony:any=[];
-  rubro:any=[];
+  rubro:any={};
   allrubro:any=[];
   currency:number=1;
   config: {
