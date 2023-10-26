@@ -73,6 +73,29 @@ export class HomeComponent implements AfterViewInit {
       }
     }
   };
+  config3: SwiperOptions = {
+    a11y: { enabled: true },
+    direction: 'horizontal',
+    slidesPerView: 6,
+    keyboard: true,
+    mousewheel: false,
+    scrollbar: false,
+    pagination: true,
+    spaceBetween: 5,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    autoplay: {
+      delay: 800, 
+      disableOnInteraction: false, 
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }
+    }
+  };
   
   
 
@@ -110,6 +133,7 @@ export class HomeComponent implements AfterViewInit {
     this.getAllProducts();
     this.getAlltest();
     this.getAllRubro();
+    this.getAllIntegration();
      }
      
     
@@ -134,6 +158,7 @@ export class HomeComponent implements AfterViewInit {
      
       });
     }
+    
     setCategory(i:any){
       let indice= i;
       this.dataApiService.getAllCategory().subscribe(
@@ -184,7 +209,11 @@ export class HomeComponent implements AfterViewInit {
       });
     }
 
-    
+    getAllIntegration(){
+      this.dataApiService.getAllIntegration().subscribe(response=>{
+        this.yeoman.allintegration=response;
+      });
+    }
 
      ngAfterViewInit(): void {
     }

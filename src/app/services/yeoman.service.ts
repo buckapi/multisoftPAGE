@@ -20,13 +20,13 @@ filtered=false;
   virtualRoute:any="dashboard";
   pop:Boolean=false;
   data:any={};
-
   products:any={};
   product:any={};
   categories:any=[];
   category:any={};
   allcategory:any=[];
-
+  integration:any={};
+  allintegration:any=[];
   clients:any={};
   client:any={};
   allclient:any=[];
