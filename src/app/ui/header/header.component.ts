@@ -11,6 +11,7 @@ import { DataApiService } from '@app/services/data-api.service';
 export class HeaderComponent implements OnInit {
 
   categories:any;
+  
   constructor(
     public router: Router,
     public yeoman: Yeoman,
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
          this.categories = response;}
        )
      }   
-     loadCategories(){
+    /*  loadCategories(){
        this.dataApiService.getAllCategory().subscribe(
          response => {
            this.categories = response;
@@ -35,11 +36,27 @@ export class HeaderComponent implements OnInit {
            console.error("Error al cargar las categorías:", error);
          }
        );
+     } */
+     loadCategories() {
+      this.dataApiService.getAllCategory().subscribe(
+        (response: any) => { // Asegúrate de que response sea del tipo correcto
+          this.categories = response;
+    
+          // Ordena las categorías por la propiedad 'name'
+          this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
+    
+          console.log("Categorías cargadas y ordenadas:", this.categories);
+        },
+        error => {
+          console.error("Error al cargar las categorías:", error);
+        }
+      );
+    }
+    
+      setPreview(i:any){
+       this.yeoman.preview=this.yeoman.allrubro[i];
+       this.router.navigate(['industries']);
      }
-    //  setPreview(i:any){
-    //   this.yeoman.preview=this.yeoman.allrubro[i];
-    //   this.router.navigate(['industries']);
-    // }
     
   ngOnInit(): void {
   }

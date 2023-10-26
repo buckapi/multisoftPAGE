@@ -31,17 +31,21 @@ export class SolutionsdetailComponent implements OnInit {
      )
    }
  
-   loadCategories(){
-     this.dataApiService.getAllCategory().subscribe(
-       response => {
-         this.categories = response;
-         console.log("Categorías cargadas:", this.categories);
-       },
-       error => {
-         console.error("Error al cargar las categorías:", error);
-       }
-     );
-   }
+   loadCategories() {
+    this.dataApiService.getAllCategory().subscribe(
+      (response: any) => { // Asegúrate de que response sea del tipo correcto
+        this.categories = response;
+  
+        // Ordena las categorías por la propiedad 'name'
+        this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
+  
+        console.log("Categorías cargadas y ordenadas:", this.categories);
+      },
+      error => {
+        console.error("Error al cargar las categorías:", error);
+      }
+    );
+  }
   
   ngOnInit(): void {
     
