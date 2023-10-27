@@ -24,7 +24,7 @@
 .fixed-size-image {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 5%;
   border: 5px solid #1c2c54;
   filter: grayscale(100%);
 }
@@ -37,11 +37,19 @@
  
 }
 
+.fixed-size-image-2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  border: 5px solid #1c2c54;
+ 
+}
+
 @media screen and (max-width: 768px) {
   .fixed-size-image{
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 5px solid #1c2c54;
     filter: grayscale(100%);
   }
@@ -52,7 +60,13 @@
       border-radius: 50%;
       border: 5px solid #1c2c54;     
     }
-  
+  .fixed-size-image-2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    border: 5px solid #1c2c54;
+   
+    }
     .swiper-button-prev, .swiper-container-rtl  {
       left: -4px;
       right: 100%;
