@@ -1,8 +1,17 @@
+.testimonial-active-07  {
+  border-radius: 5%;
+}
+
+.testimonial-item-1, .testimonial-item-h4 {
+  border-radius: 5%;
+}
+
 .d-flex {
   display: flow-root;
 }
 .testimonial-author{
   text-align: center;
+  padding-bottom: 20px;
 }
   .swiper-button-prev, .swiper-container-rtl  {
     left: 2px;

@@ -148,19 +148,20 @@
             
                 <div class=" testimonial-active-07">
                     
-                    <div class=" testimonial-item testimonial-item-h4"  >
+                    <div class=" testimonial-item-1 testimonial-item-h4"  >
                         <swiper [config]="config1">
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide text_inner_02 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
-                                    <p></p>
-                                    <div class="testimonial-author  mt-20">
+                                <div class="swiper-slide text_inner__content-4 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
+                                   
+                                    <div class="testimonial-author  ">
                                         <div class="testimonial-author__img author-testi mr-20">
                                             <img src="assets/multi/img/favicon.png" alt="">
-                                        </div>
+                                        </div> 
                                         <div class="testimonial-author__content about-testi">
-                                            <h4>{{product.name}}</h4>
+                                           
+                                           <h4>{{product.name}}</h4>
                                            
                                         </div>
                                     </div>
