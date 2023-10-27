@@ -146,15 +146,16 @@
                     </div>
                 </div>
             
-                <div class=" testimonial-active-07  wow " data-wow-delay="0.4s" >
+                <div class=" testimonial-active-07">
                     
-                     
                     <div class=" testimonial-item testimonial-item-h4"  >
                         <swiper [config]="config1">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide text_inner_02 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
                                     <p></p>
-                                    <div class="testimonial-author d-flex align-items-center mt-20">
+                                    <div class="testimonial-author  mt-20">
                                         <div class="testimonial-author__img author-testi mr-20">
                                             <img src="assets/multi/img/favicon.png" alt="">
                                         </div>
@@ -164,15 +165,9 @@
                                         </div>
                                     </div>
                                 </div>
-                           
-                                
                             </div>
                         </swiper>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                     </div>
-                   
-                
                 </div>
             </div>
     </section>
@@ -369,7 +364,7 @@
                                     <div class="text_inner text_inner_02 pos-rel white-bg">
                                         <div class="testimonial-author d-flex align-items-center mb-30">
                                             <div class="testimonial-author__img mr-20">
-                                                <img class="fixed-size-image" src="{{testimony.images[0]}}" alt="clientes de Multisoft®" *ngIf="testimony.images[0]!==undefined"  class="fixed-size-image">
+                                                <img class="fixed-size-image1" src="{{testimony.images[0]}}" alt="clientes de Multisoft®" *ngIf="testimony.images[0]!==undefined"  class="fixed-size-image1">
                                             </div>
                                            
                                         </div>
