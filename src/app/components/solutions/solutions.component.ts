@@ -35,13 +35,8 @@ export class SolutionsComponent implements OnInit {
     });
   }
    setPreview(i:any){
-    this.info.name=this.yeoman.allProducts[i].name;
-    this.info.description=this.yeoman.allProducts[i].description;
-    this.info.moduless=this.yeoman.allProducts[i].moduless;
-    console.log("INFO: ",this.info);
+    this.info=this.yeoman.allProducts[i];
     this.infoDetail.info=this.info,
-    
-    // this.yeoman.preview=this.yeoman.allProducts[i];
     this.router.navigate(['/solutionsdetail']);
   }
   ngOnInit(): void {

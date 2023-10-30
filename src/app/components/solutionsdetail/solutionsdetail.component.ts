@@ -52,7 +52,7 @@ this.localDetail=this.infoDetail;
   
   ngOnInit(): void {
     
-    console.log("lo que viene: ",this.localDetail.info)
+    console.log("lo que viene: ",JSON.stringify(this.localDetail.info))
     window.scrollTo(0, 0);
   }
 }

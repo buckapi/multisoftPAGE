@@ -10,7 +10,7 @@ import { Detail } from '@services/detail.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  allProducts:any;
   categories:any;
   info: { name: string; description: string; moduless: string; } = {
     name: 'Nombre inicial',
@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
     moduless: 'Módulos iniciales'
   };
   constructor(
+    public infoDetail: Detail,
     public router: Router,
     public yeoman: Yeoman,
     public dataApiService: DataApiService
@@ -60,10 +61,14 @@ export class HeaderComponent implements OnInit {
     
       setPreview(i:any){
        this.yeoman.preview=this.yeoman.allrubro[i];
+       this.info=this.yeoman.allrubro[i];
+     this.infoDetail.info=this.info,
        this.router.navigate(['industries']);
      }
+     
     
   ngOnInit(): void {
+    
   }
 
 }
