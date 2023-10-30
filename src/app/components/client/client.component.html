@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class=" col-lg-3 col-md-6" *ngFor="let client of yeoman.allclient;let i = index" [hidden]="yeoman.categorySelected.id!=client.idCategory &&   yeoman.filtered  ">
                         <div class="kw-single-portfolio box-shadow mb-30">
-                            <div class="kw-portfolio-thumb">
+                            <div class="kw-portfolio-thumb" style="text-align: center;">
                                 <img src="{{client.images[0]}}" alt="clientes de Multisoft®" *ngIf="client.images[0]!==undefined"  class="fixed-size-image">
                                 <h3>{{client.name}}</h3>
                             </div>

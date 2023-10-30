@@ -30,6 +30,10 @@ export class HomeComponent implements AfterViewInit {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
+     autoplay: {
+      delay: 2000, 
+      disableOnInteraction: false, 
+    },
   };
   config: SwiperOptions = {
     a11y: { enabled: true },
@@ -106,6 +110,9 @@ export class HomeComponent implements AfterViewInit {
     public dataApiService: DataApiService
 
     ) {
+      // this.products=allProducts
+      // this.clients=allclient
+      // this.rubros=allrubro
       this.script.load(
         'modernizr',
         'jquery',
