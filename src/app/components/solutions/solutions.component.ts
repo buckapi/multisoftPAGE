@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
+import { Detail } from '@services/detail.service';
 @Component({
   selector: 'app-solutions',
   templateUrl: './solutions.component.html',
@@ -13,12 +14,19 @@ export class SolutionsComponent implements OnInit {
   clients:any;
   products:any=[];
   product:any={};
+  info: { name: string; description: string; moduless: string; } = {
+    name: 'Nombre inicial',
+    description: 'Descripción inicial',
+    moduless: 'Módulos iniciales'
+  };
   constructor(
+    public infoDetail: Detail,
     public router: Router,
     public yeoman:Yeoman,
     public dataApiService: DataApiService
   ) { 
     this.getAllProducts();
+    this.yeoman.products = [];
   }
   getAllProducts(){
     
@@ -27,8 +35,14 @@ export class SolutionsComponent implements OnInit {
     });
   }
    setPreview(i:any){
-    this.yeoman.preview=this.yeoman.allProducts[i];
-    this.router.navigate(['solutionsdetail']);
+    this.info.name=this.yeoman.allProducts[i].name;
+    this.info.description=this.yeoman.allProducts[i].description;
+    this.info.moduless=this.yeoman.allProducts[i].moduless;
+    console.log("INFO: ",this.info);
+    this.infoDetail.info=this.info,
+    
+    // this.yeoman.preview=this.yeoman.allProducts[i];
+    this.router.navigate(['/solutionsdetail']);
   }
   ngOnInit(): void {
     window.scrollTo(0, 0);
