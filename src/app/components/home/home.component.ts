@@ -4,7 +4,7 @@ import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
-
+import { Detail } from '@services/detail.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,11 @@ export class HomeComponent implements AfterViewInit {
   categories:any;
   product:any;
   
+  info: { name: string; description: string; moduless: string; } = {
+    name: 'Nombre inicial',
+    description: 'Descripción inicial',
+    moduless: 'Módulos iniciales'
+  };
  
   config1: SwiperOptions = {
     a11y: { enabled: true },
@@ -104,6 +109,7 @@ export class HomeComponent implements AfterViewInit {
   
 
   constructor(
+    public infoDetail: Detail,
     public router:Router,
     public script:ScriptService,
     public yeoman:Yeoman,
@@ -195,16 +201,22 @@ export class HomeComponent implements AfterViewInit {
     }
     
     setPreview(i:any){
-      this.yeoman.preview=this.yeoman.allProducts[i];
-      this.router.navigate(['solutionsdetail']);
-    }
+    this.info.name=this.yeoman.allProducts[i].name;
+    this.info.description=this.yeoman.allProducts[i].description;
+    this.info.moduless=this.yeoman.allProducts[i].moduless;
+    console.log("INFO: ",this.info);
+    this.infoDetail.info=this.info,
+    
+    // this.yeoman.preview=this.yeoman.allProducts[i];
+    this.router.navigate(['/solutionsdetail']);
+  }
 
     setRoute(par:any){
       let parametro=par;
       this.yeoman.virtualRoute=parametro;
     }
     view(id:any){
-      this.yeoman.preview=this.yeoman.product[id];
+      this.yeoman.preview=this.yeoman.allProducts[id];
       this.setRoute('solutions');
     }
     getAllRubro(){

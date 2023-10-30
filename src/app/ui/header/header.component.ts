@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
+import { Detail } from '@services/detail.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,11 @@ import { DataApiService } from '@app/services/data-api.service';
 export class HeaderComponent implements OnInit {
 
   categories:any;
-  
+  info: { name: string; description: string; moduless: string; } = {
+    name: 'Nombre inicial',
+    description: 'Descripción inicial',
+    moduless: 'Módulos iniciales'
+  };
   constructor(
     public router: Router,
     public yeoman: Yeoman,
