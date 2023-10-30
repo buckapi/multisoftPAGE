@@ -12,6 +12,7 @@ import { Butler } from '@services/butler.service';
 export class ClientComponent implements OnInit {
   clients:any;
   categories:any;
+  category: any= [];
    
    selectedCategory:any;
   constructor(
