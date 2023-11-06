@@ -3,6 +3,7 @@ import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Router } from '@angular/router';
 import { Detail } from '@services/detail.service';
+import { Filter } from '@app/services/filters.service';
 @Component({
   selector: 'app-solutionsdetail',
   templateUrl: './solutionsdetail.component.html',
@@ -14,12 +15,13 @@ export class SolutionsdetailComponent implements OnInit {
   product:any={};
   localDetail:any=[];
   constructor(
+    public filter: Filter,
     public infoDetail: Detail,
     public yeoman: Yeoman,
     public dataApiService: DataApiService,
     public router: Router
   ) {
-this.localDetail=this.infoDetail;
+    this.localDetail=this.infoDetail;
     this.product=this.product
     this.loadCategories();
     // console.log("seted: "+JSON.stringify(this.yeoman.preview.name));
@@ -42,7 +44,6 @@ this.localDetail=this.infoDetail;
         // Ordena las categorías por la propiedad 'name'
         this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
   
-        console.log("Categorías cargadas y ordenadas:", this.categories);
       },
       error => {
         console.error("Error al cargar las categorías:", error);
