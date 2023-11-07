@@ -234,6 +234,7 @@ export class HomeComponent implements AfterViewInit {
     }
 
      ngAfterViewInit(): void {
+      window.scrollTo(0, 0);
     }
   
 
