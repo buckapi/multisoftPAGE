@@ -44,12 +44,19 @@ export class SolutionsdetailComponent implements OnInit {
         // Ordena las categorías por la propiedad 'name'
         this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
   
+        console.log("Categorías cargadas y ordenadas:", this.categories);
       },
       error => {
         console.error("Error al cargar las categorías:", error);
       }
     );
   }
+  
+setPreview(i: any) {
+  this.filter.idCategorySelected = this.categories[i].id;
+  console.log("id enviado: ", this.filter.idCategorySelected)
+    this.router.navigate(['industries']);
+}
   
   ngOnInit(): void {
     

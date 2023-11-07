@@ -30,17 +30,7 @@ export class HeaderComponent implements OnInit {
          this.categories = response;}
        )
      }   
-    /*  loadCategories(){
-       this.dataApiService.getAllCategory().subscribe(
-         response => {
-           this.categories = response;
-           console.log("Categorías cargadas:", this.categories);
-         },
-         error => {
-           console.error("Error al cargar las categorías:", error);
-         }
-       );
-     } */
+ 
      loadCategories() {
       this.dataApiService.getAllCategory().subscribe(
         (response: any) => { // Asegúrate de que response sea del tipo correcto
@@ -62,23 +52,7 @@ export class HeaderComponent implements OnInit {
     console.log("id enviado: ", this.filter.idCategorySelected)
       this.router.navigate(['industries']);
   }
-  /* setModuleFilter(category:any) {
-
- console.log("category wow:"+JSON.stringify(category))
- let idCompare="c"+category.id;
-    if(category!==undefined && category.id){
-      
-      for (let i = 0; i < this.yeoman.allrubro.length; i++) {
-        
-        let toCompare = "c" + this.yeoman.allrubro[i].id;
-        if (toCompare == idCompare){
-          this.filter.module = this.yeoman.allrubro[i];
-      }
-    }
-    }
-    console.log("comparado: ["+JSON.stringify(category)+"] con ["+JSON.stringify(this.filter.module));
-   
-  } */
+ 
 
 
     
